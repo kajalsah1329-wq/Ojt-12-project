@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPORA | Online Shopping</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    Free Shipping on Orders Above Rs. 3000 | Shop Your Favourite Products!
+</div>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="logo">SHOP<span>ORA.</span></div>
+
+    <nav id="navbar">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#products">Shop</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-icons">
+        <button onclick="toggleSearch()" aria-label="Search"><i class="fas fa-search"></i></button>
+        <button onclick="showWishlist()" aria-label="Wishlist">
+            <i class="far fa-heart"></i>
+            <span id="wish-count">0</span>
+        </button>
+        <button onclick="toggleCart()" aria-label="Shopping cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cart-count">0</span>
+        </button>
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- SEARCH BOX -->
+<div class="search-box" id="search-box">
+    <input type="text" id="search-input"
+    placeholder="Search your favourite products..."
+    oninput="searchProducts()">
+</div>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="tagline">NEW COLLECTION 2026</p>
+        <h1>Discover Your<br><span>Perfect Style.</span></h1>
+        <p>
+            Explore premium fashion, accessories and lifestyle
+            products at amazing prices.
+        </p>
+        <a href="#products" class="main-btn">SHOP NOW <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900"
+        alt="Fashion shopping collection">
+        <div class="discount-card">
+            <h2>40%</h2>
+            <p>OFF</p>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+    <div><i class="fas fa-truck"></i><span>Free Shipping</span></div>
+    <div><i class="fas fa-shield-alt"></i><span>Secure Payment</span></div>
+    <div><i class="fas fa-undo"></i><span>Easy Returns</span></div>
+    <div><i class="fas fa-headset"></i><span>24/7 Support</span></div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="section" id="categories">
+    <div class="section-heading">
+        <p>EXPLORE COLLECTIONS</p>
+        <h2>Shop By Category</h2>
+    </div>
+
+    <div class="category-grid">
+        <div class="category-card" onclick="filterCategory('Fashion')">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500" alt="Fashion">
+            <h3>Fashion</h3>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Electronics')">
+            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500" alt="Electronics">
+            <h3>Electronics</h3>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Beauty')">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500" alt="Beauty">
+            <h3>Beauty</h3>
+        </div>
+
+        <div class="category-card" onclick="filterCategory('Accessories')">
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Accessories">
+            <h3>Accessories</h3>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="section products-section" id="products">
+
+    <div class="section-heading">
+        <p>OUR BEST COLLECTION</p>
+        <h2>Trending Products</h2>
+    </div>
+
+    <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterCategory('All',this)">All</button>
+        <button class="filter-btn" onclick="filterCategory('Fashion',this)">Fashion</button>
+        <button class="filter-btn" onclick="filterCategory('Electronics',this)">Electronics</button>
+        <button class="filter-btn" onclick="filterCategory('Beauty',this)">Beauty</button>
+        <button class="filter-btn" onclick="filterCategory('Accessories',this)">Accessories</button>
+    </div>
+
+    <div class="product-grid" id="product-grid"></div>
+
+</section>
+
+<!-- OFFER BANNER -->
+<section class="offer-banner" id="offers">
+    <div>
+        <p>LIMITED TIME OFFER</p>
+        <h2>Upgrade Your Lifestyle<br>With Exclusive Deals!</h2>
+        <h3>UP TO 50% OFF</h3>
+        <a href="#products" class="main-btn">EXPLORE DEALS</a>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+    <h2>Join Our Newsletter</h2>
+    <p>Get exclusive offers and updates directly in your inbox.</p>
+
+    <form onsubmit="subscribe(event)">
+        <input type="email" id="email" placeholder="Enter your email address" required>
+        <button type="submit">SUBSCRIBE</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <div class="footer-grid">
+        <div>
+            <h2>SHOP<span>ORA.</span></h2>
+            <p>Your favourite destination for fashion, electronics and lifestyle products.</p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#products">Shop</a>
+            <a href="#offers">Offers</a>
+            <a href="#categories">Categories</a>
+        </div>
+
+        <div>
+            <h3>Customer Service</h3>
+            <a href="#contact">Contact Us</a>
+            <a href="#contact">Privacy Policy</a>
+            <a href="#contact">Return Policy</a>
+            <a href="#contact">Help Center</a>
+        </div>
+
+        <div>
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://facebook.com"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p>Email: support@shopora.com</p>
+        </div>
+    </div>
+
+    <div class="copyright">
+        © 2026 SHOPORA. All Rights Reserved.
+    </div>
+</footer>
+
+<!-- CART SIDEBAR -->
+<div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+<div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+        <h2>Your Shopping Bag</h2>
+        <button onclick="toggleCart()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div id="cart-items"></div>
+
+    <div class="cart-bottom">
+        <h3>Total: Rs. <span id="cart-total">0</span></h3>
+        <button onclick="checkout()" class="checkout-btn">PROCEED TO CHECKOUT</button>
+    </div>
+</div>
+
+<!-- QUICK VIEW MODAL -->
+<div class="modal" id="product-modal">
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal()">×</button>
+        <div id="modal-details"></div>
+    </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="index.js"></script>
+</body>
+</html>
