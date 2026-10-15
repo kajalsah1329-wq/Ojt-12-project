@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roamify | Explore The World</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header / Navbar Section -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-earth-americas"></i> Roamify
+        </div>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#tours">Featured Tours</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Adventure Awaits, Go Find It</h1>
+            <p>Discover beautiful destinations, custom tour packages, and memories that last a lifetime.</p>
+            
+            <!-- Booking Form Container -->
+            <div class="booking-container">
+                <div class="input-group">
+                    <label><i class="fa-solid fa-location-dot"></i> Where to?</label>
+                    <input type="text" placeholder="Enter Destination">
+                </div>
+                <div class="input-group">
+                    <label><i class="fa-solid fa-calendar-days"></i> When?</label>
+                    <input type="date">
+                </div>
+                <div class="input-group">
+                    <label><i class="fa-solid fa-user"></i> Guests</label>
+                    <input type="number" min="1" placeholder="1">
+                </div>
+                <button class="btn-search">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tours Section -->
+    <section id="tours" class="tours-section">
+        <h2 class="section-title">Popular Destinations</h2>
+        <div class="tours-grid">
+            
+            <!-- Card 1 -->
+            <div class="tour-card">
+                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="card-content">
+                    <h3>Maldives Getaway</h3>
+                    <p>Relax on pristine white beaches and experience luxury overwater bungalows.</p>
+                    <div class="card-meta">
+                        <span><i class="fa-solid fa-clock"></i> 5 Days</span>
+                        <span class="price">$1,299</span>
+                    </div>
+                    <button class="btn-book open-modal">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="tour-card">
+                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="card-content">
+                    <h3>Kyoto Autumn</h3>
+                    <p>Immerse yourself in historic temples, traditional teahouses, and scenic landscapes.</p>
+                    <div class="card-meta">
+                        <span><i class="fa-solid fa-clock"></i> 7 Days</span>
+                        <span class="price">$1,850</span>
+                    </div>
+                    <button class="btn-book open-modal">Book Now</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="tour-card">
+                <div class="card-img" style="background-image: url('https://unsplash.com');"></div>
+                <div class="card-content">
+                    <h3>Parisian Romance</h3>
+                    <p>Explore world-class art, culinary delights, and the iconic city architecture.</p>
+                    <div class="card-meta">
+                        <span><i class="fa-solid fa-clock"></i> 4 Days</span>
+                        <span class="price">$999</span>
+                    </div>
+                    <button class="btn-book open-modal">Book Now</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <i class="fa-solid fa-wallet"></i>
+                <h3>Best Prices</h3>
+                <p>Guaranteed competitive pricing with zero hidden booking fees.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-route"></i>
+                <h3>Curated Itineraries</h3>
+                <p>Expertly tailored travel schedules to dynamic worldwide spots.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Our travel specialists are on-call to help you anytime, anywhere.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal (Popup) -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Inquire About Your Trip</h3>
+            <form id="inquiryForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="4" placeholder="Special requirements or questions?"></textarea>
+                <button type="submit" class="btn-search">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Roamify Travel Agency. All rights reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
